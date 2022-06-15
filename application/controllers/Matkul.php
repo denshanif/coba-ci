@@ -6,13 +6,13 @@ class Matkul extends CI_Controller
   {
     parent::__construct();
     $this->load->model('M_matkul');
+    $this->load->helper('matkul');
   }
 
   public function index()
   {
     $data['matkul'] = $this->M_matkul->getMatkul();
     $data['judul'] = 'Data Mata Kuliah';
-    //print_r($data['mhs']);
     $this->load->view('matkul/v_matkul', $data);
   }
 
@@ -21,7 +21,15 @@ class Matkul extends CI_Controller
     if ($this->input->post())
     {
       $data_matkul = $this->input->post();
-      $this->M_matkul->insert_matkul($data_matkul);
+      $status = $this->M_matkul->insert_matkul($data_matkul);
+      if($status > 0)
+      {
+        $this->session->set_flashdata('msg',berhasil("Data Mata Kuliah Berhasil disimpan"));
+      }
+      else
+      {
+        $this->session->set_flashdata('msg',gagal("Data Mata Kuliah Gagal disimpan"));
+      }
       redirect(base_url().'index.php/Matkul/index');
     }
     else{
@@ -35,7 +43,15 @@ class Matkul extends CI_Controller
     if ($this->input->post())
     {
 			$data = $this->input->post();
-			$this->M_matkul->update($data);
+			$status = $this->M_matkul->update($data);
+      if($status > 0)
+      {
+        $this->session->set_flashdata('msg',berhasil("Data Mata Kuliah Berhasil diupdate"));
+      }
+      else
+      {
+        $this->session->set_flashdata('msg',gagal("Data Mata Kuliah Gagal diupdate"));
+      }
 			redirect(base_url().'index.php/Matkul/index');
 
 		}
@@ -48,7 +64,15 @@ class Matkul extends CI_Controller
 
   public function delete($kode_mk)
   {
-    $this->M_matkul->delete($kode_mk);
+    $status = $this->M_matkul->delete($kode_mk);
+    if($status > 0)
+      {
+        $this->session->set_flashdata('msg',berhasil("Data Mata Kuliah Berhasil dihapus"));
+      }
+      else
+      {
+        $this->session->set_flashdata('msg',gagal("Data Mata Kuliah Gagal dihapus"));
+      }
     redirect(base_url().'index.php/Matkul/index');
   }
 }

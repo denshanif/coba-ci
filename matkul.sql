@@ -1,0 +1,100 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 15, 2022 at 03:49 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `matkul`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_matakuliah`
+--
+
+CREATE TABLE `tbl_matakuliah` (
+  `id` int(11) NOT NULL,
+  `kode_mk` varchar(10) NOT NULL,
+  `nama` varchar(35) NOT NULL,
+  `sks` int(2) NOT NULL,
+  `semester` int(2) NOT NULL,
+  `jenis` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_matakuliah`
+--
+
+INSERT INTO `tbl_matakuliah` (`id`, `kode_mk`, `nama`, `sks`, `semester`, `jenis`) VALUES
+(1, 'IF191101', 'ETIKA & KOMPETENSI INFORMATIKA', 3, 1, 'WAJIB'),
+(2, 'IF191102', 'ALGORITMA', 3, 1, 'WAJIB'),
+(3, 'IF191103', 'MATEMATIKA KOMPUTASI', 3, 1, 'WAJIB'),
+(4, 'IF191104', 'SISTEM & TEKNOLOGI INFORMASI', 3, 1, 'WAJIB'),
+(5, 'IF191105', 'PEMROGRAMAN DASAR', 3, 2, 'WAJIB'),
+(6, 'IF191106', 'MATEMATIKA DISKRIT', 3, 2, 'WAJIB'),
+(7, 'IF191107', 'ORGANISASI & ARSITEKTUR KOMPUTER', 3, 2, 'WAJIB'),
+(8, 'IF191108', 'ALJABAR LINEAR DAN MATRIK', 3, 2, 'WAJIB'),
+(9, 'IF191109', 'STATISTIK KOMPUTASI', 3, 3, 'WAJIB'),
+(10, 'IF191110', 'METODE NUMERIK', 3, 3, 'WAJIB'),
+(11, 'IF191111', 'SISTEM OPERASI', 3, 3, 'WAJIB'),
+(12, 'IF191112', 'DESAIN BASIS DATA', 3, 3, 'WAJIB'),
+(13, 'IF191113', 'SISTEM DIGITAL', 3, 3, 'WAJIB'),
+(14, 'IF191114', 'PEMROGRAMAN LANJUT', 3, 3, 'WAJIB'),
+(15, 'IF191115', 'STRUKTUR DATA', 3, 4, 'WAJIB'),
+(16, 'IF191116', 'JARINGAN KOMPUTER', 3, 4, 'WAJIB'),
+(17, 'IF191117', 'REKAYASA PERANGKAT LUNAK', 3, 4, 'WAJIB'),
+(18, 'IF191118', 'IMPLEMENTASI BASIS DATA', 3, 4, 'WAJIB'),
+(19, 'IF191119', 'DESAIN & ANALISIS ALGORITMA', 3, 4, 'WAJIB'),
+(20, 'IF191120', 'ANALISIS & DESAIN SISTEM', 3, 4, 'WAJIB'),
+(21, 'IF191121', 'PEMROGRAMAN BERORIENTASI OBJEK', 3, 4, 'WAJIB'),
+(22, 'IF191122', 'METODOLOGI PENELITIAN', 3, 5, 'WAJIB'),
+(23, 'IF191123', 'DESAIN ANTARMUKA', 3, 5, 'WAJIB'),
+(24, 'IF191124', 'AUDIT IT', 3, 5, 'WAJIB'),
+(25, 'IF191125', 'PEMROGRAMAN WEB', 3, 5, 'WAJIB'),
+(26, 'IF191126', 'KECERDASAN BUATAN', 3, 5, 'WAJIB'),
+(27, 'IF191127', 'PENGENALAN POLA', 3, 6, 'WAJIB'),
+(28, 'IF191128', 'MANAJEMEN PROYEK', 3, 6, 'WAJIB'),
+(29, 'IF191129', 'PENGOLAHAN CITRA DIGITAL', 3, 6, 'WAJIB'),
+(30, 'IF191130', 'PEMROGRAMAN FRAMEWORK', 3, 6, 'WAJIB'),
+(49, 'IF191131', 'ADMINISTRASI SERVER', 3, 6, 'WAJIB'),
+(50, 'IF191132', 'JARINGAN KOMPUTER LANJUT', 3, 6, 'WAJIB');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_matakuliah`
+--
+ALTER TABLE `tbl_matakuliah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_matakuliah`
+--
+ALTER TABLE `tbl_matakuliah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
